@@ -11,117 +11,195 @@
 		body {
 			background: #fff;
 		}
+		.title {
+			margin: 20px 0;
+		}
+		.sub-title {
+			margin: 15px 0;
+		}
+		.method-title {
+			margin: 10px 0;
+		}
+		pre {
+			padding: 10px 5px;
+			background: #999;
+		}
+		.header {
+			background:#377bee;
+			padding:30px;
+			overflow:hidden;
+			zoom:1;
+			color:#fff;
+		}
+		.header-content {
+			width:1200px;
+			margin:auto auto;
+		}
+		.plugin-name {
+			font-size:32px;
+			text-decoration: none;
+			color:#fff;
+		}
+		.menu {
+			float:right;
+		}
+		.menu-item {
+			color:#fff;
+			text-decoration:none;
+			margin-right:20px;
+		}
+		.content {
+			width: 960px;
+			margin: 0 auto;
+		}
+		.plugin-intro {
+			text-align:center;
+			color:#000;
+			margin:50px;
+			font-size:16px;
+		}
+		.feature {
+			overflow:hidden;
+			zoom:1;
+			border-bottom: 1px solid #ccc;
+		}
+		.feature-left {
+			width: 45%;
+			float:left;
+			margin-bottom:60px;
+		}
+		.feature-title {
+			text-align:center;
+		}
+		.feature-content {
+			color:#999;
+			line-height:2;
+		}
+		.feature-right {
+			width:45%;
+			float:right;
+			margin-bottom:60px;
+		}
 	</style>
-	<script type="text/javascript" src="../aTpl.min.js"></script>
 </head>
 <body>
-	<header style="background:#377bee;padding:30px;overflow:hidden;zoom:1;color:#fff;">
-		<div style="width:1200px;margin:auto auto;">
-			<div style="float:left;font-size:32px;">aTpl</div>
-			<div style="float:right;">
-				<a href="#documents" style="color:#fff;text-decoration:none;margin-right:20px;">文档</a>
-				<a href="#example" style="color:#fff;text-decoration:none;margin-right:20px;">例子</a>
-				<a href="" style="color:#fff;text-decoration:none;margin-right:20px;">下载</a>
-				<a href="" style="color:#fff;text-decoration:none;margin-right:20px;">Github</a>
+	<header class="header" style="">
+		<div class="header-content" style="">
+			<div style="float:left;"><a href="/" class="plugin-name">aTpl</a></div>
+			<div style="" class="menu">
+				<a href="#documents" class="menu-item" style="">文档</a>
+				<a href="#example" class="menu-item" style="">例子</a>
+				<a href="../aTpl.rar" class="menu-item" style="">下载</a>
+				<a href="https://github.com/baixuexiyang/aTpl" class="menu-item" style="">Github</a>
 			</div>
 		</div>
 	</header>
-	<div style="width: 960px;margin: 0 auto;">
-		<div style="text-align:center;color:#000;margin:50px;font-size:16px;">aTpl一款让你急速渲染的模板插件</div>
-		<div class="feature" style="overflow:hidden;zoom:1;border-bottom: 1px solid #ccc;">
-			<div style="width: 45%;float:left;margin-bottom:60px;">
-				<h3 style="text-align:center;">使用简便(Simple)</h3>
-				<div style="color:#999;line-height:2;">
+	<section class="content" style="">
+		<div class="plugin-intro" style="">aTpl一款让你急速渲染的模板插件</div>
+		<div class="feature" style="">
+			<div class="feature-left" style="">
+				<h3 class="feature-title">使用简便(Simple)</h3>
+				<div class="feature-content" style="">
 					你只需要定义好模板，将数据传给他，剩下的事就交给他了。你也可以根据自己的喜好来定义标示符。
 				</div>
 			</div>
-			<div style="width:45%;float:right;margin-bottom:60px;">
-				<h3 style="text-align:center;">效率更高(effect)</h3>
-				<div style="color:#999;line-height:2;">	模板插件无非使用循环和正则表达式，aTpl根据正则匹配让你的数据在最短的时间内呈献给用户。
+			<div class="feature-right" style="">
+				<h3 class="feature-title">效率更高(effect)</h3>
+				<div class="feature-content">	模板插件无非使用循环和正则表达式，aTpl根据正则匹配让你的数据在最短的时间内呈献给用户。
 				</div>
 			</div>
-			<div style="width:45%;float:left;margin-bottom:60px;">
-				<h3 style="text-align:center;">无所不能(effect)</h3>
-				<div style="color:#999;line-height:2;">
+			<div class="feature-left">
+				<h3 class="feature-title">无所不能(effect)</h3>
+				<div class="feature-content">
 					aTpl支持多种语法，for循环，条件表达式等等，能够满足您各种业务场景。
 				</div>
 			</div>
-			<div style="width:45%;float:right;margin-bottom:60px;">
-				<h3 style="text-align:center;">文件更小(effect)</h3>
-				<div style="color:#999;line-height:2;">
-					aTpl的源码文件大小3.87k，压缩之后的文件只有2.05k。几乎不会影响资源加载时间。
+			<div class="feature-right">
+				<h3 class="feature-title">文件更小(effect)</h3>
+				<div class="feature-content">
+					aTpl的源码文件大小3.87k，压缩之后的文件只有2.01k。几乎不会影响资源加载时间。
 				</div>
 			</div>
 		</div>
 		<div id="documents" name="documents">
-			<h1>文档</h1>
+			<h1 class="title">文档</h1>
 			<div>aTpl支持cmd/amd</div>
 			<div>
-				<h3>引用</h3>
+				<h3 class="sub-title">引用</h3>
 				<div>
 					在你的html页面中添加下面的代码
 					<pre>
-						&lt;script type="text/javascript" src="asdfasdf"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="aTpl.min.js"&gt;&lt;/script&gt;
 					</pre>
 				</div>
 				<div>
 					或者使用requireJs
-					<pre>
-						define(["aTpl"], function () {
-						    // your code   
-						});
-					</pre>
+<pre>
+define(["aTpl"], function () {
+    // your code   
+});
+</pre>
 				</div>
 				<div>
 					或者使用seaJs
-					<pre>
-						define(function () {
-						    seaJs.use('aTpl');   
-						});
-					</pre>
+<pre>
+define(function () {
+    seaJs.use('aTpl');   
+});
+</pre>
 				</div>
 			</div>
 			<div>
-				<h3>方法</h3>
+				<h3 class="sub-title">方法</h3>
 				<div>
-					<h5>config</h5>
+					<h5 class="method-title">config</h5>
 					<div>
 						设置表达式开始和结尾标示符
 					</div>
 					<pre>
-						aTpl.config({
-							open: "{{",
-							end: "}}"
-						})
+aTpl.config({
+	open: "{{",
+	end: "}}"
+})
 					</pre>
 				</div>
 				<div>
-					<h5>template</h5>
+					<h5 class="method-title">template</h5>
 					<div>
 						加载模板
 					</div>
-					<pre>
-						aTpl.template("");
-					</pre>
+					<pre>aTpl.template("");</pre>
 				</div>
 				<div>
-					<h5>render</h5>
+					<h5 class="method-title">render</h5>
 					<div>
 						渲染模板，两个参数。第一个参数为渲染数据，可以是对象也可以是返回对象的函数。第二个参数是渲染完html片段之后执行的函数。
 					</div>
-					<pre>
-						aTpl.render(data, function() {});
-					</pre>
+					<pre>aTpl.render(data, function() {});</pre>
 				</div>
 			</div>
 		</div>
 		<div id="example" name="example">
-			<h1>例子</h1>
+			<h1 class="title">例子</h1>
 			<div>
 				<iframe width="100%" height="300" src="//jsfiddle.net/xiyangbaixue/u2j571xe/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 			</div>
 		</div>
-
-	</div>
+		<div>
+			<h1 class="title">
+				Release
+			</h1>
+			<div>
+				<ul>
+					<li>
+						20160327：render数据参数可以是函数
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<h1 class="title"><a href="https://github.com/baixuexiyang/aTpl/issues/new">Issue</a></h1>
+		</div>
+	</section>
 </body>
 </html>
