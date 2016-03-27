@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>aTpl</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			background: #fff;
+		}
+	</style>
+</head>
+<body>
+	<header style="background:#377bee;padding:30px;overflow:hidden;zoom:1;color:#fff;">
+		<div style="float:left;font-size:32px;">aTpl</div>
+		<div style="float:right;">
+			<a href="" style="color:#fff;text-decoration:none;">文档</a>
+			<a href="" style="color:#fff;text-decoration:none;">例子</a>
+			<a href="" style="color:#fff;text-decoration:none;">下载</a>
+			<a href="" style="color:#fff;text-decoration:none;">Github</a>
+		</div>
+	</header>
+	<div style="width: 960px;margin: 0 auto;">
+		<div style="text-align:center;color:#000;margin:50px;font-size:16px;">aTpl一款让你急速渲染的模板插件</div>
+		<div class="feature" style="overflow:hidden;zoom:1;border-bottom: 1px solid #ccc;">
+			<div style="width: 45%;float:left;margin-bottom:60px;">
+				<h3 style="text-align:center;">使用简便(Simple)</h3>
+				<div style="color:#999;line-height:2;">
+					你只需要定义好模板，将数据传给他，剩下的事就交给他了。你也可以根据自己的喜好来定义标示符。
+				</div>
+			</div>
+			<div style="width:45%;float:right;margin-bottom:60px;">
+				<h3 style="text-align:center;">效率更高(effect)</h3>
+				<div style="color:#999;line-height:2;">	模板插件无非使用循环和正则表达式，aTpl根据正则匹配让你的数据在最短的时间内呈献给用户。
+				</div>
+			</div>
+			<div style="width:45%;float:left;margin-bottom:60px;">
+				<h3 style="text-align:center;">无所不能(effect)</h3>
+				<div style="color:#999;line-height:2;">
+					aTpl支持多种语法，for循环，条件表达式等等，能够满足您各种业务场景。
+				</div>
+			</div>
+			<div style="width:45%;float:right;margin-bottom:60px;">
+				<h3 style="text-align:center;">文件更小(effect)</h3>
+				<div style="color:#999;line-height:2;">
+					aTpl的源码文件大小3.87k，压缩之后的文件只有2.05k。几乎不会影响资源加载时间。
+				</div>
+			</div>
+		</div>
+		<div id="documents" name="documents">
+			<h1>文档</h1>
+			<div>aTpl支持cmd/amd</div>
+			<div>
+				<h3>引用</h3>
+				<div>
+					在你的html页面中添加下面的代码
+					<pre>
+						&lt;script type="text/javascript" src="asdfasdf"&gt;&lt;/script&gt;
+					</pre>
+				</div>
+				<div>
+					或者使用requireJs
+					<pre>
+						define(["aTpl"], function () {
+						    // your code   
+						});
+					</pre>
+				</div>
+				<div>
+					或者使用seaJs
+					<pre>
+						define(function () {
+						    seaJs.use('aTpl');   
+						});
+					</pre>
+				</div>
+			</div>
+			<div>
+				<h3>方法</h3>
+				<div>
+					<h5>config</h5>
+					<div>
+						设置表达式开始和结尾标示符
+					</div>
+					<pre>
+						aTpl.config({
+							open: "{{",
+							end: "}}"
+						})
+					</pre>
+				</div>
+				<div>
+					<h5>template</h5>
+					<div>
+						加载模板
+					</div>
+					<pre>
+						aTpl.template("");
+					</pre>
+				</div>
+				<div>
+					<h5>render</h5>
+					<div>
+						渲染模板，两个参数。第一个参数为渲染数据，可以是对象也可以是返回对象的函数。第二个参数是渲染完html片段之后执行的函数。
+					</div>
+					<pre>
+						aTpl.render(data, function() {});
+					</pre>
+				</div>
+			</div>
+		</div>
+		<div id="example" name="example">
+			<h1>例子</h1>
+			<div>
+				
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

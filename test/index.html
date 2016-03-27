@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>aTpl</title>
+</head>
+<body>
+	<script src="../src/aTpl.js"></script>
+	<div id="demo"></div>
+	<script id="test" type="text/aTpl">
+		<div>负责人：{{ aTpl.name }}</div>
+		<div>性别：{{ aTpl.sex===1 ? '男': '女' }}</div>
+		<div>表达式：{{ 12/4 }}</div>
+		<ul>
+		{{@ for(var i = 0, _l = aTpl.contact.length; i < _l; i++){ }}
+			{{@ if(aTpl.contact[i].name === '张三') { }}
+		    	<li>
+			        <span>姓名：{{ aTpl.contact[i].name + '条件输出' }}</span>
+			        <span>性别：{{ aTpl.contact[i].sex===1 ? '男': '女' }}</span>
+		    	</li>
+		    {{@ } else { }}
+			    <li>
+			        <span>姓名：{{ aTpl.contact[i].name }}</span>
+			        <span>城市：{{ aTpl.contact[i].sex===1 ? '男': '女' }}</span>
+		    	</li>
+		    {{@ } }}
+		{{@ } }}
+		</ul>
+	</script>
+	<script>
+		var data = {
+		    name: '测试',
+		    sex: 1,
+		    contact: [{name: '张三', sex: 1},
+		    	{name: '李四', sex: 2}]
+		};
+		var temp = document.getElementById('test');
+		aTpl.template(temp).render(function() {
+			return data;
+		}, function(html){
+		    document.getElementById('demo').innerHTML = html;
+		});
+	</script>
+</body>
+</html>
