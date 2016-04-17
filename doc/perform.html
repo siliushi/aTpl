@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>aTpl</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			background: #fff;
+		}
+		.title {
+			margin: 20px 0;
+		}
+		.sub-title {
+			margin: 15px 0;
+		}
+		.method-title {
+			margin: 10px 0;
+		}
+		pre {
+			padding: 10px 5px;
+			margin: 10px 0;
+			background: #999;
+		}
+		.header {
+			background:#377bee;
+			padding:30px;
+			overflow:hidden;
+			zoom:1;
+			color:#fff;
+		}
+		.header-content {
+			width:1200px;
+			margin:auto auto;
+		}
+		.plugin-name {
+			font-size:32px;
+			text-decoration: none;
+			color:#fff;
+		}
+		.menu {
+			float:right;
+		}
+		.menu-item {
+			color:#fff;
+			text-decoration:none;
+			margin-right:20px;
+		}
+		.content {
+			width: 960px;
+			margin: 0 auto;
+		}
+		.plugin-intro {
+			text-align:center;
+			color:#000;
+			margin:50px;
+			font-size:16px;
+		}
+		.feature {
+			overflow:hidden;
+			zoom:1;
+			border-bottom: 1px solid #ccc;
+		}
+		.feature-left {
+			width: 45%;
+			float:left;
+			margin-bottom:60px;
+		}
+		.feature-title {
+			text-align:center;
+		}
+		.feature-content {
+			color:#999;
+			line-height:2;
+		}
+		.feature-right {
+			width:45%;
+			float:right;
+			margin-bottom:60px;
+		}
+		.num {
+			width: 300px;
+			height: 30px;
+			outline: none;
+			padding: 2px 3px;
+			background: #f2f2f2;
+			border-radius: 3px;
+		    border: 1px solid #999;
+		}
+		.btn {
+			background: #377bee;
+			color:#fff;
+			cursor: pointer;
+			padding: 9px 10px;
+			border-radius: 3px;
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<div class="header-content">
+			<div style="float:left;"><a href="http://baixuexiyang.github.io/aTpl/doc/" class="plugin-name">aTpl</a></div>
+			<div class="menu">
+				<a href="http://baixuexiyang.github.io/aTpl/doc/#documents" class="menu-item">文档</a>
+				<a href="http://baixuexiyang.github.io/aTpl/doc/#example" class="menu-item">例子</a>
+				<a href="http://baixuexiyang.github.io/aTpl/doc/perform.html" class="menu-item">例子</a>
+				<a href="http://baixuexiyang.github.io/aTpl/aTpl.rar" class="menu-item">下载</a>
+				<a href="https://github.com/baixuexiyang/aTpl" class="menu-item">Github</a>
+			</div>
+		</div>
+	</header>
+	<section class="content">
+		<div>
+			<h1 class="title">性能测试</h1>
+			<div>
+				<input type="text" id="num" placeholder="请输入测试数据量" class="num">
+				<span class="btn" id="start">开始测试</span>
+			</div>
+			<div style="padding: 10px;">
+				用时：<span id="time">0</span>毫秒
+			</div>
+			<div id="demo" style="height: 300px;overflow-y:auto;">
+			</div>
+		</div>
+		<div>
+			<h1 class="title"><a href="https://github.com/baixuexiyang/aTpl/issues/new">Issue</a></h1>
+		</div>
+	</section>
+	<script src="../aTpl.min.js"></script>
+	<script>
+		document.getElementById('start').onclick = function() {
+			var n = +document.getElementById('num').value,
+				list = [];
+			if(!n) return;
+			for(var i = 0; i < n; i++) {
+				list.push({
+					id: i
+				});
+			}
+			var data = {
+				list: list
+			};
+			var temp = '{{@ for(var i = 0, _l = aTpl.list.length; i < _l; i++){ }}<div>{{ aTpl.list[i].id }}</div>{{@ } }}';
+			var time = new Date().getTime();
+			aTpl.template(temp).render(data, function(html){           
+			        document.getElementById('demo').innerHTML = html;           
+			});
+			time = new Date().getTime() - time;
+			document.getElementById('time').innerText = time;
+		};
+		
+	</script>
+</body>
+</html>
