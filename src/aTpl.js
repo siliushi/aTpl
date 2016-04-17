@@ -46,7 +46,7 @@
             var _this = this,
                 open = _this.exper('^'+_this.open+'@', ''),
                 end = _this.exper(_this.close+'$', '');
-            
+            this.bk = tpl;
             tpl = tpl
                 // replace space
                 .replace(/[\r\t\n]/g, ' ')
@@ -73,7 +73,6 @@
                     }
                     return open + str.replace(/\\/g, '') + ')+"';
                 });
-
             tpl = '"use strict";var _v = "' + tpl + '";return _v;';
             try{
                 _this.cache = tpl = new Function('aTpl, _escape_', tpl);
@@ -84,6 +83,10 @@
             }
         },
         template: function(tpl) {
+            if(typeof tpl === 'string') {
+                this.tpl = tpl;
+                return this;
+            }
             tpl = tpl[0] || tpl;
             if(tpl.type !== 'text/aTpl') { 
                 return this;
@@ -96,7 +99,7 @@
             var _this = this, tpl;
             if(!data) return _this.error('no data');
             if(!this.tpl) return _this.error('no template');
-            tpl = _this.cache ? _this.cache(data, _this.escape) : _this.parser(_this.tpl, data);
+            tpl = (_this.cache && _this.tpl === _this.bk) ? _this.cache(data, _this.escape) : _this.parser(_this.tpl, data);
             if(!cb) return tpl;
             cb(tpl);
         }
