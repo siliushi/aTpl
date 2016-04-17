@@ -75,4 +75,7 @@ you can also use it with jQuery.
 # Release       
 version: 1.0.0     
  + support for and if syntax.      
- + support config the start and end flag.     
+ + support config the start and end flag.
+2016-04-17    
+ + modify cache bug
+ + support the template of string     

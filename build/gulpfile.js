@@ -13,7 +13,7 @@ gulp.task("cleand", function(){
 gulp.task("default", ["cleand"], function() {
 	return gulp.src("../src/aTpl.js")
 		.pipe(uglify({
-			mangle: false
+			mangle: true
 		}))
 		.pipe(rename({
 			suffix: '.min'
